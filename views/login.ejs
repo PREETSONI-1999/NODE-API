@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form Tutorial</title>
+		<style>
+		.login-form {
+			width: 300px;
+			padding: 20px;
+			margin-top: 180px;
+			margin-left: auto;
+			margin-right: auto;
+			font-family: Tahoma, Geneva, sans-serif;
+			border: 2px solid brown;
+			border-radius: 20px;
+			background-color: burlywood;
+		}
+		.login-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #535b63;
+			border-radius: 10px;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		body{
+			background-image: url(https://image.shutterstock.com/image-photo/abstract-blurred-hospital-corridor-blue-260nw-1029414259.jpg);
+			background-repeat: no-repeat;
+	        background-size: cover;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="login-form">
+			<h1>Login Form</h1>
+			<form action="/login" method="POST">
+                
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit">
+			</form>
+            
+            <h1>sign up</h1>
+            <form action="/new" method="POST">
+                <input type="text" name="email" placeholder="email" required>
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit">
+			</form>
+            <a href="forget_pwd">forgot password</a>
+		</div>
+        
+        
+        
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>view videos</title>
+    <style>
+        td{
+            border:2px solid red;
+        }
+        h1{
+            text-align:center;
+            margin-top:50px;
+        }
+        
+        body{
+			background-image: url(https://image.shutterstock.com/image-photo/abstract-blurred-hospital-corridor-blue-260nw-1029414259.jpg);
+			background-repeat: no-repeat;
+	        background-size: cover;
+		}
+    </style>
+</head>
+<body>
+    <h1>Videos</h1>
+    <table style="width:400px;margin:auto;margin-top:20px;">
+        <thead>
+            <td><b>Videos</b></td>
+            
+        </thead>
+<% for(var i=0; i < data.length; i++) { %>
+   <tr>
+     <td><%= data[i].video_name%></td>
+     
+   </tr>
+<% } %>
+</table>
+    
+</body>
+</html>
