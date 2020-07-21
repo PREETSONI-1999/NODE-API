@@ -7,10 +7,13 @@ const sgMail = require('@sendgrid/mail');
 const multerConf={
     storage:multer.diskStorage({
         filename:function(req,file,next){
+            console.log(file);
             next(null,file.originalname);
         },
         destination: function(req,file,next){
-            next(null,'uploads/')
+            console.log("hi");
+            next(null,'public/uploads/');
+            console.log("bye");
         }
     }),
 }
@@ -27,8 +30,9 @@ router.post('/login',function(req,res){
     Ninja.findOne({name:req.body.username,password:req.body.password},function(err,obj){
         log_user_mail=obj.email;
         console.log(obj);
+        res.render('dashboard');
     })
-    res.render('dashboard');
+    
 })
 router.post('/new',function(req,res){
     var n1=new Ninja({email:req.body.email,name:req.body.username,password:req.body.password});
@@ -81,12 +85,15 @@ router.post('/check', function(req, res) {
 router.post('/profile', multer(multerConf).single('avatar'), function (req, res, next) {
   // req.file is the `avatar` file
   // req.body will hold the text fields, if there were any
+    console.log("iploading.....");
     console.log(req.file);
     //req.filename=req.originalname;
     
     var vd='uploads/'+req.file.filename;
     var n1=new Video({email:log_user_mail,video_name:vd});
-    n1.save(function(err,res){});
+    n1.save(function(err,res){
+        
+    });
     res.send('ok');
 })
 

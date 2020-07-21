@@ -11,7 +11,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 app.use(routes);
-
+app.use( express.static( "public" ) );
 mongoose.connect("mongodb://localhost:27017/ninjago", { useNewUrlParser: true,useUnifiedTopology: true });
 
 app.get('/', function(req, res) {
