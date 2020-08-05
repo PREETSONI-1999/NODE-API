@@ -51,7 +51,7 @@ router.post('/new_pwd', function(req, res) {
     to_mail=req.body.email;
     console.log(to_mail);
     
-    sgMail.setApiKey('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');
+    //there is sgmail.setapi key func here
 
 
 const msg = {
